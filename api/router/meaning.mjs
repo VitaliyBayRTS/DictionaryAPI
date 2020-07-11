@@ -1,8 +1,12 @@
-const express = require('express');
+// const express = require('express');
+import express from 'express'
 const router = express.Router();
-const mongoose = require('mongoose');
+import mongoose from 'mongoose'
+// const mongoose = require('mongoose');
+import Meaning from '../models/meaningModel.mjs'
 
-const Meaning = require('../models/meaningModel');
+
+// const Meaning = require('../models/meaningModel');
 
 
 router.get('/allwords', (req, res, next) => {
@@ -103,4 +107,5 @@ router.delete('/:id', (req, res, next) => {
     })
 })
 
-module.exports = router;
+// module.exports = router;
+export default router;

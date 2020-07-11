@@ -1,10 +1,15 @@
-const express = require('express');
+// const express = require('express');
+import express from 'express'
 const app = express();
-const morgan = require('morgan');
-const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
+// const morgan = require('morgan');
+import morgan from 'morgan'
+import bodyParser from 'body-parser'
+import mongoose from 'mongoose'
+import meaningRouter from './api/router/meaning.mjs'
+// const bodyParser = require('body-parser');
+// const mongoose = require('mongoose');
 
-const meaningRouter = require('./api/router/meaning');
+// const meaningRouter = require('./api/router/meaning');
 
 console.log(process.env.MONGO_ATLAS_PW)
 mongoose.connect('mongodb+srv://vitaliy:' + 
@@ -49,4 +54,5 @@ app.use((error, req, res, next) => {
     })
 })
 
-module.exports = app;
+// module.exports = app;
+export default app;
