@@ -13,7 +13,6 @@ mongoose.connect('mongodb+srv://vitaliy:' +
                 useUnifiedTopology: true,
                 useNewUrlParser: true,
             })
-// mongoose.set("useNewUrlParser", true)
 
 mongoose.Promise = global.Promise;
 
@@ -23,12 +22,8 @@ app.use(bodyParser.json());
 
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', 'https://vitaliybayrts.github.io');
-    // res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
-    // res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Content-Type, Origin, X-Requested-With, Accept, Autorization, content-type');
-    // res.header('Access-Control-Allow-Headers', 'Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers');
     res.header('Access-Control-Allow-Credentials', true);
-    // res.header('Access-Control-Allow-Header', 'X-ACCESS_TOKEN ,Access-Control-Allow-Origin ,Authorization ,Origin ,x-requested-with ,Content-Type ,Content-Range ,Content-Disposition ,Content-Description');
     if(req.method === 'OPTIONS') {
         res.header('Access-Control-Allow-Methods', 'PUT, POST, PATCH, DELETE, GET, HEAD, OPTIONS');
         return res.status(200).json({});
